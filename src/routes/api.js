@@ -7,6 +7,9 @@ const router = Router();
  * Controllers imports
  */
 
+// EVENT IMPORT
+const { CreateEvent, ReadEvent } = require('@controllers');
+
 // MEASURE IMPORT
 const { ReadMeasure, ReadOneMeasure, CreateMeasure, DeleteMeasure, UpdateMeasure } = require('@controllers');
 
@@ -27,6 +30,10 @@ const { SensorsByLocation, AirPollutionByLocation, TemperatureByLocation, Averag
 /**
  * Routes
  */
+
+// Event
+router.post('/events', CreateEvent);
+router.get('/events', ReadEvent);
 
 // Measure ROUTES
 router.post('/measures', CreateMeasure);

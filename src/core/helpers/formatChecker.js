@@ -17,6 +17,7 @@ const isLocation = (loc) => {
 
     return defaultLoc.includes(loc);
 };
+
 const isDate = (dateRaw) => {
     if (!/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(dateRaw)) { return false; }
 

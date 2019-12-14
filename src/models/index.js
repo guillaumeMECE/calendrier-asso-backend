@@ -6,4 +6,5 @@ module.exports = {
     UserModel: require('./users'),
     SensorModel: require('./sensors'),
     MeasureModel: require('./measures'),
+    EventModel: require('./events'),
 };
