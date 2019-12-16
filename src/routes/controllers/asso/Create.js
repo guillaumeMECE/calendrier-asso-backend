@@ -67,8 +67,6 @@ const createAsso = async (req, res) => {
         res.status(200).json(data);
 
     } catch (error) {
-        // console.log('ERROR MESSAGE :', error.message);
-        // console.log('ERROR :', error);
         console.log('::400:: POST - /assos - ERROR:', error.message);
         res.status(400).json({ 'message': error.message });
     }
