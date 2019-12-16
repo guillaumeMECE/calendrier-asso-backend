@@ -7,6 +7,10 @@ const router = Router();
  * Controllers imports
  */
 
+// ASSO IMPORT
+const { CreateAsso } = require('@controllers');
+
+
 // EVENT IMPORT
 const { CreateEvent, ReadEvent } = require('@controllers');
 
@@ -30,6 +34,10 @@ const { SensorsByLocation, AirPollutionByLocation, TemperatureByLocation, Averag
 /**
  * Routes
  */
+
+// Asso
+router.post('/assos', CreateAsso);
+// router.get('/events', ReadEvent);
 
 // Event
 router.post('/events', CreateEvent);
