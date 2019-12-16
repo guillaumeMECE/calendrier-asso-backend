@@ -1,4 +1,4 @@
-const { SensorModel } = require('@models');
+const { AssoModel } = require('@models');
 /**
  * Request structure
  * req = { body: { } }
@@ -24,17 +24,17 @@ const secure = async (req) => {
  */
 const process = async (params) => {
     try {
-        const data = await SensorModel.findById(params.id).exec();
+        const data = await AssoModel.findById(params.id).exec();
         return data;
     } catch (error) {
-        throw new Error('Sensor can\'t be Read'.concat(' > ', error.message));
+        throw new Error('Asso can\'t be Read'.concat(' > ', error.message));
     }
 };
 
 /**
  * LOGIC :
  */
-const readOneSensor = async (req, res) => {
+const readOneAsso = async (req, res) => {
     try {
         const inputs = await secure(req);
 
@@ -47,4 +47,4 @@ const readOneSensor = async (req, res) => {
         res.status(400).json({ 'message': error.message });
     }
 };
-module.exports = readOneSensor;
+module.exports = readOneAsso;

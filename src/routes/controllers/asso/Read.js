@@ -1,4 +1,4 @@
-const { EventModel } = require('@models');
+const { AssoModel } = require('@models');
 /**
  * Request structure
  * req = { body: { } }
@@ -19,13 +19,12 @@ const secure = async (req) => {
  */
 const process = async (params) => {
     try {
-        const data = await EventModel.find().exec();
-        data.sort((a, b) => {
-            return new Date(a.date) - new Date(b.date);
-        });
+        const data = await AssoModel.find().exec();
+
         return data;
+
     } catch (error) {
-        throw new Error('Event can\'t be Read'.concat(' > ', error.message));
+        throw new Error('Asso can\'t be Read'.concat(' > ', error.message));
     }
 };
 
@@ -38,17 +37,12 @@ const readEvent = async (req, res) => {
 
         const data = await process(inputs);
 
-        // TODO: Sort don't work
-        data.sort((a, b) => {
-            console.log('new Date(a.date) - new Date(b.date): ', new Date(a.date) - new Date(b.date));
-            return new Date(a.date) - new Date(b.date);
-        });
-        console.log('::200:: GET - /events');
+        console.log('::200:: GET - /assos');
 
         res.status(200).json(data);
     } catch (error) {
-        console.log('::400:: GET - /events - ERROR:', error.message);
-        res.status(400).json({ 'message': error.message });
+        console.log('::400:: GET - /assos - ERROR:', error.message);
+        res.status(400).json({ '::400:: GET - /assos - ERROR:': error.message });
     }
 };
 module.exports = readEvent;

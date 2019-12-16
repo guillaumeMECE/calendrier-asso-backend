@@ -8,7 +8,7 @@ const router = Router();
  */
 
 // ASSO IMPORT
-const { CreateAsso } = require('@controllers');
+const { CreateAsso, ReadOneAsso, ReadAsso } = require('@controllers');
 
 
 // EVENT IMPORT
@@ -26,7 +26,8 @@ const { PopulateAssoAttributes } = require('@middlewares');
 
 // Asso
 router.post('/assos', CreateAsso);
-// router.get('/events', ReadEvent);
+router.get('/assos/:id', ReadOneAsso);
+router.get('/assos', ReadAsso);
 
 // Event
 router.post('/events', PopulateAssoAttributes, CreateEvent);
