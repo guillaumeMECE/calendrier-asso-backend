@@ -17,6 +17,10 @@ const attributes = {
         required: true
     },
     asso: {
+        id: {
+            type: Schema.Types.ObjectID,
+            required: true
+        },
         tag: {
             type: String,
             required: true

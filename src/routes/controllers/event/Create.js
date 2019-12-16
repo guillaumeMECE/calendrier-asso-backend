@@ -19,6 +19,11 @@ const secure = async (req) => {
     }
     inputs.title = req.body.title;
 
+    if (req.body.asso.id === undefined || req.body.asso.id === null) {
+        throw new Error('id undefined/null');
+    }
+    inputs.asso.id = req.body.asso.id;
+
     if (req.body.asso.tag === undefined || req.body.asso.tag === null) {
         throw new Error('tag undefined/null');
     }
@@ -58,7 +63,7 @@ const process = async (param) => {
 
         return result;
     } catch (error) {
-        throw new Error('Sensor can\'t be create'.concat(' > ', error.message));
+        throw new Error('Event can\'t be create'.concat(' > ', error.message));
     }
 
 };

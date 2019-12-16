@@ -50,6 +50,7 @@
   "_moduleAliases": {
     "@root": ".",
     "@controllers": "./src/routes/controllers",
+    "@middlewares": "./src/routes/middlewares",
     "@models": "./src/models",
     "@core": "./src/core"
   },
