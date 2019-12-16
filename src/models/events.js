@@ -16,13 +16,15 @@ const attributes = {
         type: String,
         required: true
     },
-    tag: {
-        type: String,
-        required: true
-    },
-    color: {
-        type: String,
-        required: true
+    asso: {
+        tag: {
+            type: String,
+            required: true
+        },
+        color: {
+            type: String,
+            required: true
+        },
     },
     CREATED_AT: {
         type: String,

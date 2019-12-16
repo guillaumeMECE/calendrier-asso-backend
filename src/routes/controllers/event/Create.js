@@ -12,22 +12,22 @@ const { EventModel } = require('@models');
  */
 const secure = async (req) => {
 
-    const inputs = {};
+    const inputs = { asso: {} };
 
     if (req.body.title === undefined || req.body.title === null) {
         throw new Error('title undefined/null');
     }
     inputs.title = req.body.title;
 
-    if (req.body.tag === undefined || req.body.tag === null) {
+    if (req.body.asso.tag === undefined || req.body.asso.tag === null) {
         throw new Error('tag undefined/null');
     }
-    inputs.tag = req.body.tag;
+    inputs.asso.tag = req.body.asso.tag;
 
-    if (req.body.color === undefined || req.body.color === null) {
+    if (req.body.asso.color === undefined || req.body.asso.color === null) {
         throw new Error('color undefined/null');
     }
-    inputs.color = req.body.color;
+    inputs.asso.color = req.body.asso.color;
 
     if (req.body.text === undefined || req.body.text === null) {
         throw new Error('text undefined/null');
